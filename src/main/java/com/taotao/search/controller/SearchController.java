@@ -1,7 +1,6 @@
 package com.taotao.search.controller;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +21,7 @@ public class SearchController {
 	
 	@RequestMapping(value="/query", method=RequestMethod.GET)
 	@ResponseBody
+	//请求的url：	/search/query?q={查询条件}&page={page}&rows={rows}，page默认为1，rows默认为60
 	public TaotaoResult search(@RequestParam("q")String queryString, 
 			@RequestParam(defaultValue="1")Integer page, 
 			@RequestParam(defaultValue="60")Integer rows) {
