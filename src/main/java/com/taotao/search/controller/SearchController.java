@@ -24,7 +24,7 @@ public class SearchController {
 	//请求的url：	/search/query?q={查询条件}&page={page}&rows={rows}，page默认为1，rows默认为60
 	public TaotaoResult search(@RequestParam("q")String queryString, 
 			@RequestParam(defaultValue="1")Integer page, 
-			@RequestParam(defaultValue="60")Integer rows) {
+			@RequestParam(defaultValue="6")Integer rows) {
 		//查询条件不能为空
 		if (StringUtils.isBlank(queryString)) {
 			return TaotaoResult.build(400, "查询条件不能为空");
